@@ -3,7 +3,7 @@ import UnderlinText from "../../components/UnderLineText";
 import pipelinesImg from "../../Assets/backgrounds/pipelines.png";
 
 const ServiceDetailPanel = (props) => {
-    const { children, value, index, ...other } = props;
+   
     return ( 
         <Box
             role="tabpanel"

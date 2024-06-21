@@ -9,7 +9,6 @@ import Work from "../pages/work/work";
 import Contactus from "../pages/contact/contact";
 import News from "../pages/News/news";
 
-
 export const AppRouter = createBrowserRouter([
     {
         path: '/',

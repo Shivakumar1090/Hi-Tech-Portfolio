@@ -1,6 +1,5 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import PageNameSec from "../../components/Pagenamesec";
-import crystalBlackBG from "../../Assets/backgrounds/crystalBlackBG.jpg";
 import ResponsiveContainer from "../../components/ResponsiveContainer";
 import About1_BlueDressGirlImg from "../../Assets/about us/about1_bluedressgirl.png";
 import UnderlinText from "../../components/UnderLineText";
