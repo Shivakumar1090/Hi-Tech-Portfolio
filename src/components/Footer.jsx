@@ -36,7 +36,7 @@ const Footer = () => {
                     <Link to="/" smooth={true} ><Lightfont cursor='pointer'>Home</Lightfont></Link>
                     <Link to="About" smooth={true}><Lightfont cursor='pointer'>About</Lightfont></Link>
                     <Link to="services" smooth={true}><Lightfont cursor='pointer'>Services</Lightfont></Link>
-                    <Link to="work" smooth={true}><Lightfont cursor='pointer'>Projects</Lightfont></Link>
+                    <Link to="projects" smooth={true}><Lightfont cursor='pointer'>Projects</Lightfont></Link>
                     <Link to="News" smooth={true}><Lightfont cursor='pointer'>News</Lightfont></Link>
                     <Link to="Contactus" smooth={true}><Lightfont cursor='pointer'>Contact us</Lightfont></Link>
                 </Stack>

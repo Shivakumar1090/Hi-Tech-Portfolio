@@ -60,14 +60,14 @@ const Home = () => {
                     <Grid
                         container
                         rowSpacing={3}
-                        columnSpacing={5}
+                        columnSpacing={2}
                         columns={{ xs: 4, sm: 8, md: 12,}}
                         justifyContent="center"
-                        alignItems="center"
+                        alignItems="stretch"
                     >
                         {Services_data.slice(0,4).map((service,index) => {
                             return(
-                                <Grid item xs={2} sm={4} md={3}   key={index}>
+                                <Grid item xs={2} sm={4} md={3}   key={index} style={{ display: 'flex' }}>
                                     <CardwithText 
                                         title={Services_data[index].Title}
                                         img = {Services_data[index].Image}
