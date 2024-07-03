@@ -19,7 +19,7 @@ const Footer = () => {
                 <Stack spacing={1}>
                     <Typography fontSize="20px" fontWeight={600}>Contact us</Typography>
                     <Typography fontWeight={200}>+91 9689211588</Typography>
-                    <Lightfont>ch.shivakumar491@gmail.com</Lightfont>
+                    <Lightfont>umeshhitecheng@gmail.com</Lightfont>
                     <Lightfont>Plot no-12/15, Vikas wadi, Alandi Markal Road, Alandi Pune -412105</Lightfont>
                 </Stack>
                 {/* <Stack spacing={1}>

@@ -8,6 +8,10 @@ import Services from "../pages/services/service";
 import Work from "../pages/work/work";
 import Contactus from "../pages/contact/contact";
 import News from "../pages/News/news";
+import axios from "axios";
+import importAllImages from "../utils/imagesImporter";
+
+const NEWSAPILINK = "https://newsapi.org/v2/everything?q=Mechanical%20Engineering%20and%20Technology%20News&sortBy=popularity&apiKey=32420470b8554916a1409dd5a9441c84&page=1&pageSize=30"
 
 export const AppRouter = createBrowserRouter([
     {
@@ -30,7 +34,11 @@ export const AppRouter = createBrowserRouter([
             },
             {
                 path: 'projects',
-                element: <Work />
+                element: <Work />,
+                loader: (async() => {
+                            const images = importAllImages(require.context('../Assets/projects', false, /\.(png|jpe?g|svg)$/));
+                            return images;
+                        })
             },
             {
                 path: 'contactus',
@@ -38,12 +46,14 @@ export const AppRouter = createBrowserRouter([
             },
             {
                 path: 'news',
-                element: <News />
+                element: <News />,
+                loader: (async ({ request }) => {
+                            const res = await axios.get(NEWSAPILINK);
+                            const newsdata = await res?.data?.articles;
+                            return newsdata;
+                        })
             },
-            // {
-            //     path: 'signin',
-            //     element: <Login />
-            // },
+           
         ]
     },
 ]);

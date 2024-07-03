@@ -1,4 +1,4 @@
-import {Box, Button, Container, Grid, Typography} from "@mui/material";
+import {Box, Button, Container, Grid, Stack, Typography} from "@mui/material";
 import BackgroundImage from "../../Assets/backgrounds/HomeBG.jpg";
 import About1_BlueDressGirlImg from "../../Assets/about us/about1_bluedressgirl.png";
 import ResponsiveContainer from "../../components/ResponsiveContainer";
@@ -6,10 +6,10 @@ import UnderlinText from "../../components/UnderLineText";
 import CardwithText from "../../components/CardwithText";
 import FlexContainer from "../../components/FlexContainer";
 import PipelinesBg from "../../Assets/backgrounds/pipelines.png";
-import SocialMediaAccounts from "../../components/SocialMedia";
 import { Link } from "react-router-dom";
 import importAllImages from "../../utils/imagesImporter";
   
+const {Services_data} = require("../../Data/service_data");
 const Project_images = importAllImages(require.context('../../Assets/projects', false, /\.(png|jpe?g|svg)$/));
 
 const Home = () => {
@@ -27,99 +27,98 @@ const Home = () => {
                 </Box>
             </Container>
 
-            {/* About US */}
-            <ResponsiveContainer mt={{xs: 2, md: 0}}>
-                <Grid
-                    container
-                    rowSpacing={{xs: 3, md: 0}}
-                    columnSpacing={{xs: 0, md: 5}}
-                    direction={{xs: 'column-reverse', md: 'row'}}
-                    justifyContent="space-between"
-                    alignItems="center"
-                    // sx={{minHeight: '70vh'}}
-                >
-                    <Grid item md={5} xs={5}>
-                        <img src={About1_BlueDressGirlImg} alt="img" style={{height: '100%', width: '100%' , objectFit: 'cover'}}/>
+            <Stack spacing={5} alignItems="center" width='100%'>
+                <ResponsiveContainer >
+                    <Grid
+                        container
+                        rowSpacing={{xs: 3, md: 0}}
+                        columnSpacing={{xs: 0, md: 5}}
+                        direction={{xs: 'column-reverse', md: 'row'}}
+                        justifyContent="space-between"
+                        alignItems="center"
+                        // sx={{minHeight: '70vh'}}
+                    >
+                        <Grid item md={5} xs={5}>
+                            <img src={About1_BlueDressGirlImg} alt="img" style={{height: '100%', width: '100%' , objectFit: 'cover'}}/>
+                        </Grid>
+                        <Grid item md={7} xs={5} textAlign='justify'>
+                            <UnderlinText> About Us </UnderlinText>
+                            <Typography
+                                lineHeight={1.5}
+                            >
+                                HI-TECH Engineering, established by a team of seasoned professionals, excels in design, planning, and project management. With over 7 years of experience in industrial green and brownfield projects, we provide end-to-end solutions from concept to commissioning. Our dedication to quality and innovation ensures that we meet the highest standards in the industry.
+                            </Typography>
+                        </Grid>
                     </Grid>
-                    <Grid item md={7} xs={5} textAlign='justify'>
-                        <UnderlinText> About Us </UnderlinText>
-                        <Typography
-                            lineHeight={1.5}
-                        >
-                           Hi-Tech Engineering excels in handling MEP turnkey projects, particularly within the Oil & Gas, Pharmaceutical, and Industrial (Automobile) Manufacturing sectors. Our journey begins from scratch, culminating in the handover of fully operational machinery to the functional head. Additionally, we have a sister company, LEPL, established in 2017, which focuses exclusively on precision works and machine installations.
-                        </Typography>
+                </ResponsiveContainer>
+
+                <ResponsiveContainer  >
+                    <FlexContainer justifyContent= 'space-between' mb={2}>
+                        <UnderlinText>Our Services</UnderlinText>
+                        <Button  component={Link} to="services">See more</Button>
+                    </FlexContainer>
+                    <Grid
+                        container
+                        rowSpacing={3}
+                        columnSpacing={5}
+                        columns={{ xs: 4, sm: 8, md: 12,}}
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        {Services_data.slice(0,4).map((service,index) => {
+                            return(
+                                <Grid item xs={2} sm={4} md={3}   key={index}>
+                                    <CardwithText 
+                                        title={Services_data[index].Title}
+                                        img = {Services_data[index].Image}
+                                        content = {Services_data[index].Content}
+                                    />
+                                </Grid>
+                            )
+                        })}
                     </Grid>
-                </Grid>
-            </ResponsiveContainer>
+                </ResponsiveContainer>
 
-            {/* Services */}
-            <ResponsiveContainer minHeight={{xs: '70vh', md: '60vh'}} >
-                <FlexContainer justifyContent= 'space-between' mb={2}>
-                    <UnderlinText>Our Services</UnderlinText>
-                    <Button  component={Link} to="services">See more</Button>
-                </FlexContainer>
-                <Grid
-                    container
-                    rowSpacing={3}
-                    columnSpacing={5}
-                    columns={{ xs: 4, sm: 8, md: 12,}}
-                    justifyContent="center"
-                    alignItems="center"
+                <FlexContainer flexDirection="column"  
+                    sx={{
+                        height: '40vh',
+                        width : '100%',
+                        backgroundImage: `linear-gradient(to bottom,rgba(226, 51, 57,0.7),rgba(226, 51, 57, 0.7)),url(${PipelinesBg})`, 
+                        backgroundSize: 'cover', 
+                        backgroundPosition: 'center',
+                        color: '#fff',
+                        textAlign: 'center'
+                    }}
                 >
-                    {Array.from(Array(4)).map((service,index) => {
-                        return(
-                            <Grid item xs={2} sm={4} md={3}   key={index}>
-                                <CardwithText />
-                            </Grid>
-                        )
-                    })}
-                </Grid>
-            </ResponsiveContainer>
-
-            <FlexContainer  flexDirection="column"  sx={{background: '#0e0e0e' , height: '30vh', mt: 5, color: '#fff', textAlign: 'center'}}>
-                <Typography gutterBottom fontWeight={600} fontSize={{xs: '35px', sm: '50px'}}>Connect with us and explore our services</Typography>
-                <Button size="large" variant="contained">Contact US</Button>
-            </FlexContainer>
-
-            {/* Projecrs */}
-            <ResponsiveContainer>
-                <FlexContainer justifyContent= 'space-between' mb={2}>
-                    <UnderlinText>Our Projects</UnderlinText>
-                    <Button component={Link} to="projects">See more</Button>
+                    <Typography fontWeight={700} fontSize={{xs: '35px', sm: '50px'}}>Connect with us and explore our services</Typography>
+                
+                    <Button size="large" color='secondary' variant="contained" sx={{mt: 2}}>Contact US</Button>
                 </FlexContainer>
-                <Grid
-                    container
-                    rowSpacing={3}
-                    columnSpacing={5}
-                    columns={{ xs: 4, sm: 8, md: 12,}}
-                    justifyContent="center"
-                    alignItems="center"
-                >
-                    {ProjectImageKeys.map((key,index) => {
-                        return(
-                            <Grid item xs={2} sm={4} md={3}   key={index}>
-                                {/* <ImageCard /> */}
-                                <img src={Project_images[key]} alt="" style={{width: '100%', height: 200, objectFit: 'cover', borderRadius: '10px'}}/>
-                            </Grid>
-                        )
-                    })}
-                </Grid>
-            </ResponsiveContainer>
 
-            <FlexContainer flexDirection="column"  
-                sx={{
-                    height: '50vh',
-                    backgroundImage: `linear-gradient(to bottom,rgba(226, 51, 57,0.7),rgba(226, 51, 57, 0.7)),url(${PipelinesBg})`, 
-                    backgroundSize: 'cover', 
-                    backgroundPosition: 'center',
-                    color: '#fff',
-                    textAlign: 'center'
-                }}
-            >
-                <Typography fontWeight={700} fontSize={{xs: '35px', sm: '50px'}}>Connect with us and explore our services</Typography>
-                <SocialMediaAccounts />
-                <Button size="large" color='secondary' variant="contained" sx={{mt: 2}}>Contact US</Button>
-            </FlexContainer>
+                {/* Projecrs */}
+                <ResponsiveContainer>
+                    <FlexContainer justifyContent= 'space-between' mb={2}>
+                        <UnderlinText>Our Projects</UnderlinText>
+                        <Button component={Link} to="projects">See more</Button>
+                    </FlexContainer>
+                    <Grid
+                        container
+                        rowSpacing={3}
+                        columnSpacing={2}
+                        columns={{ xs: 4, sm: 8, md: 12,}}
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        {ProjectImageKeys.map((key,index) => {
+                            return(
+                                <Grid item xs={2} sm={4} md={3}   key={index}>
+                                    <img src={Project_images[key]} alt="" style={{width: '100%', height: 200, objectFit: 'cover', borderRadius: '10px'}}/>
+                                </Grid>
+                            )
+                        })}
+                    </Grid>
+                </ResponsiveContainer>
+            </Stack>
         </Box>
     );
 }

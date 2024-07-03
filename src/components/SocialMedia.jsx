@@ -1,9 +1,6 @@
 import { Stack } from "@mui/material";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
 const SocialMediaAccounts = () => {
 
@@ -16,22 +13,7 @@ const SocialMediaAccounts = () => {
         {
             id: 2,
             Icon: MailOutlineOutlinedIcon,
-            Link: "",
-        },
-        {
-            id: 3,
-            Icon: InstagramIcon,
-            Link: ""
-        },
-        {
-            id: 4,
-            Icon: LinkedInIcon,
-            Link: ""
-        },
-        {
-            id: 5,
-            Icon: YouTubeIcon,
-            Link: "",
+            Link: "mailto:umeshhitecheng@gmail.com",
         },
     ]
 

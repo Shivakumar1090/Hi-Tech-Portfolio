@@ -60,7 +60,11 @@ const Contactus = () => {
                                 <BusinessIcon />
                                 <Typography fontWeight={600}>High Tech Engineering</Typography>
                             </Stack>
-                            <Typography variant="body2" fontWeight={300}>Plot no-12/15, Vikas wadi, Alandi Markal Road, Alandi Pune -412105</Typography>
+                            <Typography variant="body2" fontWeight={300}>
+                                Near Sai enterprises, Ground floor, plot no 8,
+                                Gate no 527/2, Markel Road, khed, Alandi Rural, Pune,
+                                Maharashtra, 412105,INDIA
+                            </Typography>
                             <Stack direction="row" spacing={1} alignItems="center">
                                 <PersonIcon />
                                 <Typography variant="body2">Mr. Umesh Nimbalkar</Typography>
@@ -71,7 +75,7 @@ const Contactus = () => {
                             </Stack>
                             <Stack direction="row" spacing={1} alignItems="center">
                                 <EmailIcon />
-                                <Typography variant="body2">mail@gmail.com</Typography>
+                                <Typography variant="body2">umeshhitecheng@gmail.com</Typography>
                             </Stack>
                         </Stack>
                     </Grid>

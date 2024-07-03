@@ -1,13 +1,11 @@
-import { Box, Button, Paper, Stack, Typography } from "@mui/material";
-import MechSerImg from "../Assets/services/mech.png";
+import { Paper, Stack, Typography } from "@mui/material";
 
-const CardwithText = ({title,desc,imgUrl,articleUrl, news}) => {
-    console.log(news)
+const CardwithText = ({title,content,img}) => {
     return ( 
         <Paper elevation={4}>
-            <img src={MechSerImg} alt="" style={{width: '100%', objectFit: 'cover'}}/>
+            <img src={img} alt="" style={{width: '100%', objectFit: 'cover'}}/>
             <Stack spacing={{xs: 1,md: 2}} p={{xs: 1,md: 2}} textAlign="justify" alignItems="left">
-                <Typography variant="Headings">{news?.title} Services</Typography>
+                <Typography variant="Headings">{title}</Typography>
                 <Typography variant="body2"
                     sx = {{
                         overflow: "hidden",
@@ -19,15 +17,9 @@ const CardwithText = ({title,desc,imgUrl,articleUrl, news}) => {
                         fontSize: { xs: "10px",sm:'11px', md: "12px", },
                     }}
                 >
-                    Whether you need to install cooling for a new server room or figure out how to replace your inefficient central mechanical plant, you want to partner with mechanical engineers you trust.
+                    {content}
                 </Typography>
-                {news?.articleUrl && 
-                    <Box>
-                        <Button  size='small' variant="contained" >
-                            Read More
-                        </Button>
-                    </Box>
-                }
+                
             </Stack>
         </Paper>
      );

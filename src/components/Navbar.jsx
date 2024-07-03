@@ -20,7 +20,6 @@ const drawerWidth = "100%";
 const Navbar = (props) => {
     const { window } = props;
     const location = useLocation().pathname;
-    console.log(location)
     const [currentTab, setCurrentTab] = useState(location);
     const [mobileOpen, setMobileOpen] = useState(false);
 

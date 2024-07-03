@@ -3,6 +3,8 @@ import PageNameSec from "../../components/Pagenamesec";
 import React from "react";
 import ServiceDetailPanel from "./tab_panel";
 
+const {Services_data} = require("../../Data/service_data");
+
 const Services = () => {
     const [value, setValue] = React.useState(0);
     const theme = useTheme();
@@ -19,27 +21,28 @@ const Services = () => {
                 columnSpacing={5}
                 rowSpacing={3}
                 justifyContent="space-around"
-                textAlign="justify"
+                // textAlign="justify"
                 p={3}
                 alignItems="stretch"
             >
-                <Grid item xl={2} sx={{ borderRight: 1, borderColor: 'divider', textAlign: 'left', alignItems: 'stretch',}}>
+                <Grid item xs={12} lg={3} sx={{ borderRight: {xs: 0, lg: 1}, borderColor: 'divider', textAlign: 'left', alignItems: 'stretch',}}>
                     <Tabs
                         orientation={isMediumUp ? "vertical" : "horizontal"}
                         variant="scrollable"
+                        scrollButtons
+                        allowScrollButtonsMobile
                         value={value}
                         onChange={handleChange}
                         aria-label="Vertical tabs example"
-                        
+                        // centered
                     >
-                        <Tab label="Mechanical services"  />
-                        <Tab label="Electrical Services"  />
-                        <Tab label="Plumbing Services"  />
-                        
+                        {Services_data?.map((item,index) => (
+                            <Tab key={index} value={index} label={item?.Title} wrapped/>
+                        ))}
                     </Tabs>
                 </Grid>
                 <Grid item xl={8}>
-                    <ServiceDetailPanel value={value} index={0}/>
+                    <ServiceDetailPanel indx={value} index={0}/>
                 </Grid>
             </Grid>
         </Box>

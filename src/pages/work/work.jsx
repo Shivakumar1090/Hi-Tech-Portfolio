@@ -2,11 +2,11 @@ import { Box, Grid, Typography } from "@mui/material";
 import PageNameSec from "../../components/Pagenamesec";
 import ResponsiveContainer from "../../components/ResponsiveContainer";
 import UnderlinText from "../../components/UnderLineText";
-import importAllImages from "../../utils/imagesImporter";
+import { useLoaderData } from "react-router-dom";
 
 const Work = () => {
       
-    const images = importAllImages(require.context('../../Assets/projects', false, /\.(png|jpe?g|svg)$/));
+    const images = useLoaderData();
     return ( 
         <Box>
             <PageNameSec pagename="Our Recent Work" mb={2}/>
