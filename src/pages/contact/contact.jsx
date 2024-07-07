@@ -46,12 +46,12 @@ const Contactus = () => {
                 >
                     <Grid item md={6}>
                         <iframe 
-                            title="company-location"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15118.983444554144!2d73.89516034212394!3d18.675396876056446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c89cfe0b65cb%3A0x7f6c4fb9088164f5!2sTanishq%20Vlasta!5e0!3m2!1sen!2sin!4v1718893934562!5m2!1sen!2sin" 
-                            width="100%"
-                            height={450} 
-                            style={{border: 0}} 
-                            allowFullScreen="" 
+                            title='company location'
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3779.9975131577103!2d73.9443448751952!3d18.664107582457568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDM5JzUwLjgiTiA3M8KwNTYnNDguOSJF!5e0!3m2!1sen!2sin!4v1720370958455!5m2!1sen!2sin" 
+                            width="600" 
+                            height="450" 
+                            style={{border:"0",}}
+                            allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
                         />
