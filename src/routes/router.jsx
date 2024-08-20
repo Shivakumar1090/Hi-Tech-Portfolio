@@ -36,8 +36,9 @@ export const AppRouter = createBrowserRouter([
                 path: 'projects',
                 element: <Work />,
                 loader: (async() => {
-                            const images = importAllImages(require.context('../Assets/projects', false, /\.(png|jpe?g|svg)$/));
-                            return images;
+                            const Mechimages = importAllImages(require.context('../Assets/Hitech Photos/Mechanical', false, /\.(png|jpe?g|svg)$/));
+                            const Elecimages = importAllImages(require.context('../Assets/Hitech Photos/Electrical', false, /\.(png|jpe?g|svg)$/));
+                            return {Elecimages, Mechimages};
                         })
             },
             {

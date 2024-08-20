@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import importAllImages from "../../utils/imagesImporter";
   
 const {Services_data} = require("../../Data/service_data");
-const Project_images = importAllImages(require.context('../../Assets/projects', false, /\.(png|jpe?g|svg)$/));
+const Project_images = importAllImages(require.context('../../Assets/Hitech Photos/Mechanical', false, /\.(png|jpe?g|svg)$/));
 
 const Home = () => {
     const ProjectImageKeys = Object.keys(Project_images).slice(0, 4);
@@ -92,7 +92,7 @@ const Home = () => {
                 >
                     <Typography fontWeight={700} fontSize={{xs: '35px', sm: '50px'}}>Connect with us and explore our services</Typography>
                 
-                    <Button size="large" color='secondary' variant="contained" sx={{mt: 2}}>Contact US</Button>
+                    <Button component={Link} to="contactus" size="large" color='secondary' variant="contained" sx={{mt: 2}}>Contact US</Button>
                 </FlexContainer>
 
                 {/* Projecrs */}
