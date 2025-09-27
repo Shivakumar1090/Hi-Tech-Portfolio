@@ -66,7 +66,7 @@ const Navbar = (props) => {
             component={Paper}
             elevation={10}
         >
-            <Box sx={{width: {xs: '60px', md: '100px', lg: '120px', xl: '80px'}, textAlign: 'center'}}>
+            <Box sx={{width: {xs: '70px', md: '120px', lg: '150px', xl: '100px'}, textAlign: 'center'}}>
                 <img src={Logoimg} alt="logo" style={{width: '100%', objectFit: 'cover'}}/>
             </Box>
 
